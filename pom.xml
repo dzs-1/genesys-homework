@@ -5,11 +5,48 @@
   <artifactId>genesys-homework</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
+  <properties>
+    <junit-jupiter-api.version>5.9.2</junit-jupiter-api.version>
+    <selenium-java.version>4.8.0</selenium-java.version>
+    <webdrivermanager.version>5.3.2</webdrivermanager.version>
+    <assertj-core.version>3.24.2</assertj-core.version>
+    <maven.compiler.source>19</maven.compiler.source>
+    <maven.compiler.target>19</maven.compiler.target>
+    <cucumber-java.version>7.11.1</cucumber-java.version>
+    <cucumber-junit.version>7.11.1</cucumber-junit.version>
+    <httpcore5.version>5.2</httpcore5.version>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>4.8.0</version>
+      <version>${selenium-java.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>${webdrivermanager.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>${cucumber-java.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>${cucumber-junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents.core5</groupId>
+      <artifactId>httpcore5</artifactId>
+      <version>${httpcore5.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit-jupiter-api.version}</version>
     </dependency>
   </dependencies>
 </project>
