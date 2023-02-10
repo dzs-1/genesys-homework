@@ -1,18 +1,12 @@
 package org.dozsapeter.genesys.user_interfaces.sauce_demo;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static java.lang.String.format;
 import static org.dozsapeter.genesys.step_defintions.SetupStepDefinitions.webDriver;
-import static org.dozsapeter.genesys.step_defintions.SetupStepDefinitions.webDriverWait;
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class SauceDemoHomePage {
-
 
     private static String INVENTORY_ITEM_XPATH = "//button[contains(@class, 'btn_inventory')]" +
             "[ancestor::div[contains(@class, 'inventory_item_description')]" +

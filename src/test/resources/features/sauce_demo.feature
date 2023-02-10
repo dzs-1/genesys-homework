@@ -1,5 +1,8 @@
+@genesys_homework
+@sauce_demo
 Feature: Sauce Demo
 
+  @case_1
   Scenario: Case 1 - Automate Purchase Process
     Given the user opens the Sauce Demo page
     When the user logs in to the Sauce Demo page
@@ -12,6 +15,7 @@ Feature: Sauce Demo
       |         Fred         |      Robot      |         1010           |
     Then the user verifies that the "Thank you for your order" message is present
 
+  @case_2
   Scenario: Case 2 - Verify error messages for mandatory fields
     Given the user opens the Sauce Demo page
     When the user clicks on the login button
