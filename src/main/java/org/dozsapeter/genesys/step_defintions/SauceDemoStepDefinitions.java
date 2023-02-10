@@ -6,35 +6,27 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.dozsapeter.genesys.user_interfaces.sauce_demo.*;
-
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SauceDemoStepDefinitions {
 
-    SauceDemoLoginPage sauceDemoLoginPage;
-    SauceDemoHomePage sauceDemoHomePage;
-    SauceDemoCartPage sauceDemoCartPage;
-    SauceDemoCheckoutInformationPage sauceDemoCheckoutInformationPage;
-    SauceDemoCheckoutOverviewPage sauceDemoCheckoutOverviewPage;
-    SauceDemoOrderSuccessPage sauceDemoOrderSuccessPage;
+    private static SauceDemoLoginPage sauceDemoLoginPage;
+    private static SauceDemoHeader sauceDemoHeader;
+    private static SauceDemoFooter sauceDemoFooter;
 
     @Given("the user opens the Sauce Demo page")
-    public void opensTheSaucedemoPage() throws IOException {
+    public void opensTheSaucedemoPage() {
         sauceDemoLoginPage = new SauceDemoLoginPage();
-        sauceDemoHomePage = new SauceDemoHomePage();
-        sauceDemoCartPage = new SauceDemoCartPage();
-        sauceDemoCheckoutInformationPage = new SauceDemoCheckoutInformationPage();
-        sauceDemoCheckoutOverviewPage = new SauceDemoCheckoutOverviewPage();
-        sauceDemoOrderSuccessPage = new SauceDemoOrderSuccessPage();
         sauceDemoLoginPage.openPage();
     }
 
     @When("the user logs in to the Sauce Demo page")
     public void logsInToTheSauceDemoPage() {
+        sauceDemoLoginPage = new SauceDemoLoginPage();
         sauceDemoLoginPage.enterUsername();
         sauceDemoLoginPage.enterPassword();
         sauceDemoLoginPage.clickOnLogin();
@@ -43,6 +35,7 @@ public class SauceDemoStepDefinitions {
 
     @And("the user adds the following items to the cart:")
     public void addsTheFollowingItemsToTheCart(final DataTable dataTable) {
+        SauceDemoHomePage sauceDemoHomePage = new SauceDemoHomePage();
         List<String> rows = dataTable.asList();
         for (String row : rows) {
             sauceDemoHomePage.clickOnInventoryItem(row);
@@ -51,14 +44,19 @@ public class SauceDemoStepDefinitions {
 
     @And("the user validates that there are {int} items in the cart")
     public void validatesThatThereAreItemsInTheCart(final int numberOfItems) {
-        assertEquals(numberOfItems, sauceDemoHomePage.getShoppingCartItemCounterValue());
+        sauceDemoHeader = new SauceDemoHeader();
+        assertEquals(numberOfItems, sauceDemoHeader.getShoppingCartItemCounterValue());
     }
 
     @And("the user goes through the checkout process with the following data:")
     public void goesThroughTheCheckoutProcessWithTheFollowingData(final DataTable dataTable) {
-        Map<String, String> map = dataTable.transpose().asMap();
-        sauceDemoHomePage.clickOnCartIcon();
+        sauceDemoHeader = new SauceDemoHeader();
+        SauceDemoCartPage sauceDemoCartPage = new SauceDemoCartPage();
+        SauceDemoCheckoutInformationPage sauceDemoCheckoutInformationPage = new SauceDemoCheckoutInformationPage();
+        SauceDemoCheckoutOverviewPage sauceDemoCheckoutOverviewPage = new SauceDemoCheckoutOverviewPage();
+        sauceDemoHeader.clickOnCartIcon();
         sauceDemoCartPage.clickOnCheckoutButton();
+        Map<String, String> map = dataTable.transpose().asMap();
         sauceDemoCheckoutInformationPage.enterValueIntoFirstNameField(map.get("First name"));
         sauceDemoCheckoutInformationPage.enterValueIntoLastNameField(map.get("Last name"));
         sauceDemoCheckoutInformationPage.enterValueIntoPostalCodeField(map.get("Postal code"));
@@ -68,6 +66,40 @@ public class SauceDemoStepDefinitions {
 
     @Then("the user verifies that the {string} message is present")
     public void verifiesThatTheMessageIsPresent(final String message) {
+        SauceDemoOrderSuccessPage sauceDemoOrderSuccessPage = new SauceDemoOrderSuccessPage();
         assertEquals(message.toUpperCase(), sauceDemoOrderSuccessPage.getSuccessMessage());
+    }
+
+    @When("the user clicks on the login button")
+    public void clicksOnTheLoginButton() {
+        sauceDemoLoginPage = new SauceDemoLoginPage();
+        sauceDemoLoginPage.clickOnLogin();
+    }
+
+    @Then("the user validates the error message is {string}")
+    public void validatesTheErrorMessageIs(final String errorMessage) {
+        sauceDemoLoginPage = new SauceDemoLoginPage();
+        assertEquals(errorMessage, sauceDemoLoginPage.getErrorMessage());
+    }
+
+    @When("the user logs in with default username and password")
+    public void logsInWithDefaultUsernameAndPassword() {
+        sauceDemoLoginPage = new SauceDemoLoginPage();
+        sauceDemoLoginPage.enterDefaultUsername();
+        sauceDemoLoginPage.enterDefaultPassword();
+        sauceDemoLoginPage.clickOnLogin();
+    }
+
+    @And("the user scrolls down to the bottom of the page")
+    public void scrollsDownToTheBottomOfThePage() {
+        sauceDemoFooter = new SauceDemoFooter();
+        sauceDemoFooter.scrollDownToFooter();
+    }
+
+    @Then("the user verifies that the footer message contains {string} and {string}")
+    public void verifiesThatTheFooterMessageContainsAnd(final String year, String termsOfServiceText) {
+        sauceDemoFooter = new SauceDemoFooter();
+        assertTrue(sauceDemoFooter.getFooterSectionText().contains(termsOfServiceText));
+        assertTrue(sauceDemoFooter.getFooterSectionText().contains(year));
     }
 }

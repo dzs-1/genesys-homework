@@ -12,3 +12,11 @@ Feature: Sauce Demo
       |         Fred         |      Robot      |         1010           |
     Then the user verifies that the "Thank you for your order" message is present
 
+  Scenario: Case 2 - Verify error messages for mandatory fields
+    Given the user opens the Sauce Demo page
+    When the user clicks on the login button
+    Then the user validates the error message is "Epic sadface: Username is required"
+    When the user logs in with default username and password
+    And the user scrolls down to the bottom of the page
+    Then the user verifies that the footer message contains "2023" and "Terms of Service"
+
