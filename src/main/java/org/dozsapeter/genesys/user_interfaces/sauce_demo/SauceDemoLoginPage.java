@@ -17,19 +17,32 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClick
 
 public class SauceDemoLoginPage {
 
-    Gson gson = new Gson();
-    TestUser user = gson.fromJson(getFileAsStringFromResources(CREDENTIALS_FILE), TestUser.class);
+    private static Gson gson = new Gson();
+    private static TestUser user;
+    private static final String USERNAME = System.getProperty("username");
+    private static final String PASSWORD = System.getProperty("password");
+
+    static {
+        try {
+            user = gson.fromJson(getFileAsStringFromResources(CREDENTIALS_FILE), TestUser.class);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @FindBy(xpath = "//input[contains(@id, 'user-name')]")
-    public static WebElement SAUCE_DEMO_USERNAME_LOGIN_INPUT_FIELD;
+    private static WebElement SAUCE_DEMO_USERNAME_LOGIN_INPUT_FIELD;
 
     @FindBy(xpath = "//input[contains(@id, 'password')]")
-    public static WebElement SAUCE_DEMO_PASSWORD_LOGIN_INPUT_FIELD;
+    private static WebElement SAUCE_DEMO_PASSWORD_LOGIN_INPUT_FIELD;
 
     @FindBy(xpath = "//input[@id='login-button']")
-    public static WebElement LOGIN_BUTTON;
+    private static WebElement LOGIN_BUTTON;
 
-    public SauceDemoLoginPage() throws IOException {
+    @FindBy(xpath = "//h3[@data-test='error']")
+    private static WebElement ERROR_MESSAGE;
+
+    public SauceDemoLoginPage() {
         PageFactory.initElements(webDriver, this);
     }
 
@@ -38,9 +51,19 @@ public class SauceDemoLoginPage {
         SAUCE_DEMO_USERNAME_LOGIN_INPUT_FIELD.sendKeys(user.getUsername());
     }
 
+    public void enterDefaultUsername() {
+        webDriverWait.until(elementToBeClickable(SAUCE_DEMO_USERNAME_LOGIN_INPUT_FIELD));
+        SAUCE_DEMO_USERNAME_LOGIN_INPUT_FIELD.sendKeys(USERNAME);
+    }
+
     public void enterPassword() {
         webDriverWait.until(elementToBeClickable(SAUCE_DEMO_PASSWORD_LOGIN_INPUT_FIELD));
         SAUCE_DEMO_PASSWORD_LOGIN_INPUT_FIELD.sendKeys(user.getPassword());
+    }
+
+    public void enterDefaultPassword() {
+        webDriverWait.until(elementToBeClickable(SAUCE_DEMO_PASSWORD_LOGIN_INPUT_FIELD));
+        SAUCE_DEMO_PASSWORD_LOGIN_INPUT_FIELD.sendKeys(PASSWORD);
     }
 
     public void openPage() {
@@ -48,6 +71,11 @@ public class SauceDemoLoginPage {
     }
 
     public void clickOnLogin() {
+        webDriverWait.until(elementToBeClickable(LOGIN_BUTTON));
         LOGIN_BUTTON.click();
+    }
+
+    public String getErrorMessage() {
+        return ERROR_MESSAGE.getText();
     }
 }

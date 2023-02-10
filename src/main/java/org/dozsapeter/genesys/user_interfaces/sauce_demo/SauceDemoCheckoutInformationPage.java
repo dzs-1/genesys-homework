@@ -9,16 +9,16 @@ import static org.dozsapeter.genesys.step_defintions.SetupStepDefinitions.webDri
 public class SauceDemoCheckoutInformationPage {
 
     @FindBy(xpath = "//input[@id='continue']")
-    WebElement CONTINUE_BUTTON;
+    private static WebElement CONTINUE_BUTTON;
 
     @FindBy(xpath = "//input[@id='first-name']")
-    WebElement FIRST_NAME_INPUT_FIELD;
+    private static WebElement FIRST_NAME_INPUT_FIELD;
 
     @FindBy(xpath = "//input[@id='last-name']")
-    WebElement LAST_NAME_INPUT_FIELD;
+    private static WebElement LAST_NAME_INPUT_FIELD;
 
     @FindBy(xpath = "//input[@id='postal-code']")
-    WebElement POSTAL_CODE_INPUT_FIELD;
+    private static WebElement POSTAL_CODE_INPUT_FIELD;
 
     public SauceDemoCheckoutInformationPage() {
         PageFactory.initElements(webDriver, this);

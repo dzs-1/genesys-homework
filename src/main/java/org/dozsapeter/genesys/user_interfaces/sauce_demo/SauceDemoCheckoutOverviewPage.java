@@ -9,7 +9,7 @@ import static org.dozsapeter.genesys.step_defintions.SetupStepDefinitions.webDri
 public class SauceDemoCheckoutOverviewPage {
 
     @FindBy(xpath = "//button[@id='finish']")
-    WebElement FINISH_BUTTON;
+    private static WebElement FINISH_BUTTON;
 
     public SauceDemoCheckoutOverviewPage() {
         PageFactory.initElements(webDriver, this);

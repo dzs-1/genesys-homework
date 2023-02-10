@@ -13,9 +13,9 @@ public class WebDriverFactory {
 
             WebDriver driver;
             String browserName = System.getProperty("browser", WebDriverType.SAFARI.toString()).toUpperCase();
-            WebDriverType _driverType = WebDriverType.valueOf(browserName);
+            WebDriverType driverType = WebDriverType.valueOf(browserName);
 
-            switch (_driverType) {
+            switch (driverType) {
                 case FIREFOX:
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
