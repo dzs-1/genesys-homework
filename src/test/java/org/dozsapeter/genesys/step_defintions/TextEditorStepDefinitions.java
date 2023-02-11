@@ -22,7 +22,7 @@ public class TextEditorStepDefinitions {
         textEditorPage.clickOnBoldButton();
     }
 
-    @And("the user clicks on  underline style in the editor")
+    @And("the user clicks on underline style in the editor")
     public void clicksOnUnderlineStyleInTheEditor() {
         textEditorPage.clickOnUnderlineButton();
     }

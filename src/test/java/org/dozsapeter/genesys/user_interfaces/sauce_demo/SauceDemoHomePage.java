@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
 import static java.lang.String.format;
-import static org.dozsapeter.genesys.step_defintions.SetupStepDefinitions.webDriver;
+import static org.dozsapeter.genesys.step_defintions.CommonStepDefinitions.webDriver;
 
 public class SauceDemoHomePage {
 

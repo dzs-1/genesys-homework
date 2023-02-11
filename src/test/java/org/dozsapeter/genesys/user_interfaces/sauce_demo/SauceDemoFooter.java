@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.dozsapeter.genesys.step_defintions.SetupStepDefinitions.webDriver;
+import static org.dozsapeter.genesys.step_defintions.CommonStepDefinitions.webDriver;
 
 public class SauceDemoFooter {
 
@@ -20,8 +20,4 @@ public class SauceDemoFooter {
         return FOOTER_SECTION.getAttribute("innerHTML");
     }
 
-    public void scrollDownToFooter() {
-        JavascriptExecutor js = (JavascriptExecutor) webDriver;
-        js.executeScript("window.scrollBy(0, 0)");
-    }
 }

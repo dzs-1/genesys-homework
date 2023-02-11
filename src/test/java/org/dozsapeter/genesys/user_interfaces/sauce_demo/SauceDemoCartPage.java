@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.dozsapeter.genesys.step_defintions.SetupStepDefinitions.webDriver;
+import static org.dozsapeter.genesys.step_defintions.CommonStepDefinitions.webDriver;
 
 public class SauceDemoCartPage {
 
