@@ -19,7 +19,7 @@ public class SauceDemoStepDefinitions {
     private static SauceDemoFooter sauceDemoFooter;
 
     @Given("the user opens the Sauce Demo page")
-    public void opensTheSaucedemoPage() {
+    public void opensTheSauceDemoPage() {
         sauceDemoLoginPage = new SauceDemoLoginPage();
         sauceDemoLoginPage.openPage();
     }
@@ -88,12 +88,6 @@ public class SauceDemoStepDefinitions {
         sauceDemoLoginPage.enterDefaultUsername();
         sauceDemoLoginPage.enterDefaultPassword();
         sauceDemoLoginPage.clickOnLogin();
-    }
-
-    @And("the user scrolls down to the bottom of the page")
-    public void scrollsDownToTheBottomOfThePage() {
-        sauceDemoFooter = new SauceDemoFooter();
-        sauceDemoFooter.scrollDownToFooter();
     }
 
     @Then("the user verifies that the footer message contains {string} and {string}")

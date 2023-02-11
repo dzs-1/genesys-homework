@@ -12,7 +12,7 @@ public class Urls {
 
     public static String SAUCE_DEMO_INVENTORY_URL;
     public static String ONLINE_HTML_EDITOR_URL;
-
+    public static String GURU_99_DEMO_URL;
 
     static {
         try {
@@ -38,6 +38,20 @@ public class Urls {
                                                  .build()
                                                  .toURL()
                                                  .toString();
+        } catch (MalformedURLException | URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    static {
+        try {
+            String GURU_99_DEMO_HOST = "demo.guru99.com";
+            GURU_99_DEMO_URL = new URIBuilder().setScheme(HTTPS)
+                    .setHost(GURU_99_DEMO_HOST)
+                    .setPath("test").appendPath("guru99home")
+                    .build()
+                    .toURL()
+                    .toString();
         } catch (MalformedURLException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
