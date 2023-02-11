@@ -12,7 +12,7 @@ public class WebDriverFactory {
         public static WebDriver getDriver() {
 
             WebDriver driver;
-            String browserName = System.getProperty("browser", WebDriverType.SAFARI.toString()).toUpperCase();
+            String browserName = System.getProperty("browser", WebDriverType.CHROME.toString()).toUpperCase();
             WebDriverType driverType = WebDriverType.valueOf(browserName);
 
             switch (driverType) {
@@ -24,14 +24,14 @@ public class WebDriverFactory {
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
-                case CHROME:
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                case SAFARI:
+                    WebDriverManager.safaridriver().setup();
+                    driver = new SafariDriver();
                     break;
 
                 default:
-                    WebDriverManager.safaridriver().setup();
-                    driver = new SafariDriver();
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
                     break;
             }
             driver.manage().window().maximize();
