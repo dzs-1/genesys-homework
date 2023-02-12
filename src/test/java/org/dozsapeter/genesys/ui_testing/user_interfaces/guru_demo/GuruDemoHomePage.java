@@ -53,7 +53,8 @@ public class GuruDemoHomePage {
     }
 
     public void clickOnAcceptAllCookiesButton() {
-        webDriverWait.until(visibilityOf(GDPR_CONSENT_IFRAME));
+        //webDriverWait.until(visibilityOf(GDPR_CONSENT_IFRAME));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         webDriver.switchTo().frame(GDPR_CONSENT_IFRAME);
         ACCEPT_ALL_COOKIES_BUTTON.click();
     }
