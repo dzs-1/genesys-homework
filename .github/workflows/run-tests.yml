@@ -26,4 +26,4 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          mvn test -B -Dusername="${USERNAME}" -Dpassword="${PASSWORD}"
+          mvn test -B -ntp -Dusername="${USERNAME}" -Dpassword="${PASSWORD}"
