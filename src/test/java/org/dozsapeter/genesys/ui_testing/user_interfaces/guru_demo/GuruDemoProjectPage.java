@@ -16,9 +16,6 @@ public class GuruDemoProjectPage {
     @FindBy(xpath = "//button[contains(@class, 'fc-cta-consent')]")
     private static WebElement COOKIE_CONSENT_BUTTON;
 
-    @FindBy(xpath = "//div[@id='dismiss-button']")
-    private static WebElement DISMISS_BUTTON;
-
     public GuruDemoProjectPage() {
         PageFactory.initElements(webDriver, this);
     }
@@ -29,7 +26,6 @@ public class GuruDemoProjectPage {
     }
 
     public void clickOnAcceptCookieConsent()  {
-        DISMISS_BUTTON.click();
         webDriver.switchTo().parentFrame();
         COOKIE_CONSENT_BUTTON.click();
     }

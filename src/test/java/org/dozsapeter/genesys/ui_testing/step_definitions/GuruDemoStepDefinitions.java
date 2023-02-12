@@ -7,6 +7,8 @@ import io.cucumber.java.en.When;
 import org.dozsapeter.genesys.ui_testing.user_interfaces.guru_demo.GuruDemoHomePage;
 import org.dozsapeter.genesys.ui_testing.user_interfaces.guru_demo.GuruDemoProjectPage;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
