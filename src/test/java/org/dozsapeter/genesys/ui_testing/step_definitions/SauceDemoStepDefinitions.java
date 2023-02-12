@@ -1,4 +1,4 @@
-package org.dozsapeter.genesys.ui_testing.step_defintions;
+package org.dozsapeter.genesys.ui_testing.step_definitions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;

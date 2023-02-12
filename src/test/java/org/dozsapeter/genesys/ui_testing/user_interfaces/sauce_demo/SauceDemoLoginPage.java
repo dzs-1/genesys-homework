@@ -11,8 +11,8 @@ import java.io.IOException;
 import static org.dozsapeter.genesys.helpers.FileResolver.getFileAsStringFromResources;
 import static org.dozsapeter.genesys.constants.FileNames.CREDENTIALS_FILE;
 import static org.dozsapeter.genesys.constants.Urls.SAUCE_DEMO_INVENTORY_URL;
-import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriver;
-import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriverWait;
+import static org.dozsapeter.genesys.ui_testing.step_definitions.CommonStepDefinitions.webDriver;
+import static org.dozsapeter.genesys.ui_testing.step_definitions.CommonStepDefinitions.webDriverWait;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class SauceDemoLoginPage {
