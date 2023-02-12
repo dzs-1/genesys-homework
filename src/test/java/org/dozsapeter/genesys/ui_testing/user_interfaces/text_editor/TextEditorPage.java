@@ -1,13 +1,13 @@
-package org.dozsapeter.genesys.user_interfaces.text_editor;
+package org.dozsapeter.genesys.ui_testing.user_interfaces.text_editor;
 
+import org.dozsapeter.genesys.constants.Urls;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.dozsapeter.genesys.constants.Urls.ONLINE_HTML_EDITOR_URL;
-import static org.dozsapeter.genesys.step_defintions.CommonStepDefinitions.webDriver;
-import static org.dozsapeter.genesys.step_defintions.CommonStepDefinitions.webDriverWait;
+import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriver;
+import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriverWait;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
 
 public class TextEditorPage {
@@ -23,7 +23,7 @@ public class TextEditorPage {
     }
 
     public void openTextEditor() {
-        webDriver.get(ONLINE_HTML_EDITOR_URL);
+        webDriver.get(Urls.ONLINE_HTML_EDITOR_URL);
         webDriverWait.until(visibilityOfAllElements(EDITOR_SECTION));
         EDITOR_SECTION.click();
     }

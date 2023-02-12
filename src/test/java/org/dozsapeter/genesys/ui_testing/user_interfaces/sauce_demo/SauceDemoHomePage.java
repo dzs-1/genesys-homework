@@ -1,10 +1,10 @@
-package org.dozsapeter.genesys.user_interfaces.sauce_demo;
+package org.dozsapeter.genesys.ui_testing.user_interfaces.sauce_demo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
 import static java.lang.String.format;
-import static org.dozsapeter.genesys.step_defintions.CommonStepDefinitions.webDriver;
+import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriver;
 
 public class SauceDemoHomePage {
 

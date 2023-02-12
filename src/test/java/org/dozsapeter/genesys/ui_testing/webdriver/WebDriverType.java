@@ -1,4 +1,4 @@
-package org.dozsapeter.genesys.webdriver;
+package org.dozsapeter.genesys.ui_testing.webdriver;
 
 public enum WebDriverType {
 

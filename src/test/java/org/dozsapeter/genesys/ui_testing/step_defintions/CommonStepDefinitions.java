@@ -1,9 +1,9 @@
-package org.dozsapeter.genesys.step_defintions;
+package org.dozsapeter.genesys.ui_testing.step_defintions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
-import org.dozsapeter.genesys.webdriver.WebDriverFactory;
+import org.dozsapeter.genesys.ui_testing.webdriver.WebDriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;

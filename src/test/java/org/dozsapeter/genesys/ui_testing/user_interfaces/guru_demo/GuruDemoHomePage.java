@@ -1,13 +1,14 @@
-package org.dozsapeter.genesys.user_interfaces.guru_demo;
+package org.dozsapeter.genesys.ui_testing.user_interfaces.guru_demo;
 
+import org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static org.dozsapeter.genesys.constants.Urls.GURU_99_DEMO_URL;
-import static org.dozsapeter.genesys.step_defintions.CommonStepDefinitions.webDriver;
-import static org.dozsapeter.genesys.step_defintions.CommonStepDefinitions.webDriverWait;
+import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriver;
+import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriverWait;
 
 public class GuruDemoHomePage {
 

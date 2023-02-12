@@ -1,11 +1,11 @@
-package org.dozsapeter.genesys.step_defintions;
+package org.dozsapeter.genesys.ui_testing.step_defintions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.dozsapeter.genesys.user_interfaces.sauce_demo.*;
+import org.dozsapeter.genesys.ui_testing.user_interfaces.sauce_demo.*;
 import java.util.List;
 import java.util.Map;
 
