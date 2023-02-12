@@ -22,5 +22,8 @@ jobs:
         uses: browser-actions/setup-chrome@v1
 
       - name: Run tests
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          mvn test -Dusername=standard_user -Dpassword=secret_sauce
+          mvn test -Dusername="${USERNAME}" -Dpassword="${PASSWORD}"
