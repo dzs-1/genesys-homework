@@ -2,6 +2,7 @@ name: Run tests
 
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   Building-app-and-running-tests:
