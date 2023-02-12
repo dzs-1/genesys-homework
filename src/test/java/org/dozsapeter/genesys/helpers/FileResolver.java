@@ -1,4 +1,4 @@
-package org.dozsapeter.genesys;
+package org.dozsapeter.genesys.helpers;
 
 import java.io.IOException;
 import java.nio.file.Files;

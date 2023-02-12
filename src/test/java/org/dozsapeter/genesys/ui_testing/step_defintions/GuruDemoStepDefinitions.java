@@ -1,11 +1,11 @@
-package org.dozsapeter.genesys.step_defintions;
+package org.dozsapeter.genesys.ui_testing.step_defintions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.dozsapeter.genesys.user_interfaces.guru_demo.GuruDemoHomePage;
-import org.dozsapeter.genesys.user_interfaces.guru_demo.GuruDemoProjectPage;
+import org.dozsapeter.genesys.ui_testing.user_interfaces.guru_demo.GuruDemoHomePage;
+import org.dozsapeter.genesys.ui_testing.user_interfaces.guru_demo.GuruDemoProjectPage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

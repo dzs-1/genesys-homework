@@ -1,18 +1,18 @@
-package org.dozsapeter.genesys.user_interfaces.sauce_demo;
+package org.dozsapeter.genesys.ui_testing.user_interfaces.sauce_demo;
 
 import com.google.gson.Gson;
-import org.dozsapeter.genesys.TestUser;
+import org.dozsapeter.genesys.ui_testing.TestUser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-import static org.dozsapeter.genesys.FileResolver.getFileAsStringFromResources;
+import static org.dozsapeter.genesys.helpers.FileResolver.getFileAsStringFromResources;
 import static org.dozsapeter.genesys.constants.FileNames.CREDENTIALS_FILE;
 import static org.dozsapeter.genesys.constants.Urls.SAUCE_DEMO_INVENTORY_URL;
-import static org.dozsapeter.genesys.step_defintions.CommonStepDefinitions.webDriver;
-import static org.dozsapeter.genesys.step_defintions.CommonStepDefinitions.webDriverWait;
+import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriver;
+import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriverWait;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class SauceDemoLoginPage {

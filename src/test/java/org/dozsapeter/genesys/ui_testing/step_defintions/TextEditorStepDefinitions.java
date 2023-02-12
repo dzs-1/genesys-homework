@@ -1,10 +1,10 @@
-package org.dozsapeter.genesys.step_defintions;
+package org.dozsapeter.genesys.ui_testing.step_defintions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.dozsapeter.genesys.user_interfaces.text_editor.TextEditorPage;
+import org.dozsapeter.genesys.ui_testing.user_interfaces.text_editor.TextEditorPage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

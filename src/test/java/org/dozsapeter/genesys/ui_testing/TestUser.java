@@ -1,4 +1,4 @@
-package org.dozsapeter.genesys;
+package org.dozsapeter.genesys.ui_testing;
 
 public class TestUser {
 
