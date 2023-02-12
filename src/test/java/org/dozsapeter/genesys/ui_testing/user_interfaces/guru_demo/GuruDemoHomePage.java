@@ -40,6 +40,13 @@ public class GuruDemoHomePage {
     }
 
     public void clickOnAcceptAllCookiesButton() {
+        synchronized (webDriver) {
+            try {
+                webDriver.wait(8000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         webDriver.switchTo().frame(GDPR_CONSENT_IFRAME);
         ACCEPT_ALL_COOKIES_BUTTON.click();
     }
