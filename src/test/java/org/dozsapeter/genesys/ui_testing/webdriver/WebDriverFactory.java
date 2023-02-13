@@ -33,18 +33,11 @@ public class WebDriverFactory {
             default:
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
-                chromeOptions.addArguments("--incognito");
-                chromeOptions.addArguments("--no-sandbox");
-                chromeOptions.addArguments("--deny-permission-prompts");
-                chromeOptions.addArguments("--disable-gpu");
-                chromeOptions.addArguments("--window-size=1920,1080");
-                chromeOptions.addArguments("--allow-insecure-localhost");
-                chromeOptions.addArguments("--disable-popup-blocking");
-                chromeOptions.setCapability("acceptInsecureCerts",true);
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(chromeOptions);
                 break;
         }
+        driver.manage().window().maximize();
         return driver;
     }
 }
