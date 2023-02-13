@@ -14,6 +14,5 @@ Feature: iFrame and tab handling
     And the user switches back to the original tab
     When the user scrolls up to the top of the page
     And the user clicks on the Testing link in the header
-    And the user switches to the new tab
     And the user accepts the cookie consent the Guru Project page
-    And the user verifies the red button is displayed on the page
+    Then the user verifies the red button is displayed on the page

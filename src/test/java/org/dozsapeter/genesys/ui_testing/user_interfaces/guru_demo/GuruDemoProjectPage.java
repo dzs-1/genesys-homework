@@ -4,8 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriver;
-import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriverWait;
+import static org.dozsapeter.genesys.ui_testing.step_definitions.CommonStepDefinitions.webDriver;
+import static org.dozsapeter.genesys.ui_testing.step_definitions.CommonStepDefinitions.webDriverWait;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class GuruDemoProjectPage {
@@ -25,8 +25,8 @@ public class GuruDemoProjectPage {
         return RED_BUTTON.isDisplayed();
     }
 
-    public void clickOnAcceptCookieConsent() {
-        webDriverWait.until(visibilityOf(COOKIE_CONSENT_BUTTON));
+    public void clickOnAcceptCookieConsent()  {
+        webDriver.switchTo().parentFrame();
         COOKIE_CONSENT_BUTTON.click();
     }
 }

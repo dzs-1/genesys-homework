@@ -1,4 +1,4 @@
-package org.dozsapeter.genesys.ui_testing.step_defintions;
+package org.dozsapeter.genesys.ui_testing.step_definitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -6,6 +6,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.dozsapeter.genesys.ui_testing.user_interfaces.guru_demo.GuruDemoHomePage;
 import org.dozsapeter.genesys.ui_testing.user_interfaces.guru_demo.GuruDemoProjectPage;
+
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -64,7 +66,7 @@ public class GuruDemoStepDefinitions {
     }
 
     @And("the user verifies the red button is displayed on the page")
-    public void verifiesTheRedButtonIsDisplayedOnThePage() throws InterruptedException {
+    public void verifiesTheRedButtonIsDisplayedOnThePage() {
         guruDemoProjectPage= new GuruDemoProjectPage();
         assertTrue(guruDemoProjectPage.isRedButtonVisible());
     }

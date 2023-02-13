@@ -1,14 +1,11 @@
 package org.dozsapeter.genesys.ui_testing.user_interfaces.guru_demo;
 
-import org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static org.dozsapeter.genesys.constants.Urls.GURU_99_DEMO_URL;
-import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriver;
-import static org.dozsapeter.genesys.ui_testing.step_defintions.CommonStepDefinitions.webDriverWait;
+import static org.dozsapeter.genesys.ui_testing.step_definitions.CommonStepDefinitions.webDriver;
 
 public class GuruDemoHomePage {
 
@@ -43,7 +40,14 @@ public class GuruDemoHomePage {
     }
 
     public void clickOnAcceptAllCookiesButton() {
-        webDriverWait.until(ExpectedConditions.visibilityOf(GDPR_CONSENT_IFRAME));
+        synchronized (webDriver) {
+            try {
+                webDriver.wait(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        webDriver.switchTo().activeElement();
         webDriver.switchTo().frame(GDPR_CONSENT_IFRAME);
         ACCEPT_ALL_COOKIES_BUTTON.click();
     }
@@ -69,7 +73,9 @@ public class GuruDemoHomePage {
         webDriver.switchTo().window(originalWindow);
     }
 
-    public void clickOnTestingLink() {
+    public void clickOnTestingLink()  {
+        TESTING_LINK_IN_HEADER.click();
+        webDriver.navigate().refresh();
         TESTING_LINK_IN_HEADER.click();
     }
 }

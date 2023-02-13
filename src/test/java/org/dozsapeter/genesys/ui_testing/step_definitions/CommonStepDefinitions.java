@@ -1,4 +1,4 @@
-package org.dozsapeter.genesys.ui_testing.step_defintions;
+package org.dozsapeter.genesys.ui_testing.step_definitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -19,7 +19,7 @@ public class CommonStepDefinitions {
     @Before
     public void setupBrowser() {
         webDriver = WebDriverFactory.getDriver();
-        webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
+        webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(15));
     }
 
     @After
